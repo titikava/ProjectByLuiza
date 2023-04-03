@@ -28,15 +28,17 @@ public class MyClass {
 
         // -------------------------FRUIT---------------------------------------------
 
-        Fruit apple1 = new Apple();
+        Apple apple1 = new Apple();
+        apple1.setWeight(4);
         Pear pear1 = new Pear();
+        pear1.setWeight(1);
         Pear pear2 = new Pear();
-        Fruit apricot1 = new Apricot();
-        System.out.println(pear1.price(2));
-        System.out.println(pear2.price(1));
-        System.out.println(Pear.allPrice);
-        System.out.println(apple1.price(4));
-        System.out.println(Fruit.allFruitPrice);
+        pear2.setWeight(4);
+        Apricot apricot1 = new Apricot();
+        apricot1.setWeight(2);
+        System.out.print(pear1.price() + " ;" + pear2.price() + " ;" + apple1.price() + " ;" + apricot1.price() + "\n");
+        System.out.println("Sale Pear: " + Pear.allPrice);
+        System.out.println("Sale all fruit: " + Fruit.allFruitPrice);
        /* System.out.println("Всего продано на сумму: " + (apple1.price(1.25) + pear1.price(5) + apricot1.price(5.74)));
         System.out.println("Всего продано яблок на сумму: " + apple1.price(1.25));
         System.out.println("Всего продано груш на сумму: " + pear1.price(5));
