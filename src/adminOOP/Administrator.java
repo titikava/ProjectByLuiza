@@ -9,6 +9,7 @@ public class Administrator extends Client {
     protected int experience;
     protected int gratuity;
     protected int scandal;
+    static int allScandal;
 
     Administrator(String surname, String name, int experience) {
         this.surname = surname;
@@ -18,10 +19,14 @@ public class Administrator extends Client {
 
     Administrator(String name, int experience, int gratuity, int scandal) {
         this.name = name;
-        this.experience = experience;
         this.gratuity = gratuity;
         this.scandal = scandal;
-
+        if (experience > 6) {
+            this.experience = experience;
+        } else {
+            System.out.println("Мало опыта");
+        }
+        allScandal = scandal + scandal;
     }
 
     Administrator(String surname, String name, int experience, int gratuity, int scandal) {
@@ -30,10 +35,14 @@ public class Administrator extends Client {
         this.experience = experience;
         this.gratuity = gratuity;
         this.scandal = scandal;
+        allScandal = scandal + scandal;
     }
 
     Administrator() {
-        scandal = getScandal() + getScandal();
+    }
+
+    public int getAllScandal(){
+        return allScandal;
     }
 
     public int getExperience() {
