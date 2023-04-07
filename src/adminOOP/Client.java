@@ -2,6 +2,7 @@ package adminOOP;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Client {
     protected String name;
@@ -80,7 +81,11 @@ public class Client {
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        if (Objects.equals(gender, "Female") || Objects.equals(gender, "Male")) {
+            this.gender = gender;
+        } else {
+            System.out.println("Не существующий гендер");
+        }
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -100,13 +105,12 @@ public class Client {
 
     public static void getSomethingMoney(String name, Administrator administrator) {
         System.out.println(name + " дал чаевые " + administrator.getName() + " в размере - " + administrator.getGratuity()
-        + " долларов");
+                + " долларов");
     }
 
     public static void thanksAdmin(Administrator administrator) {
-        String c = "Спасибо большое! " + administrator.getName() + " . Все было супер!";
-        c = c.replace('с', 'ш').toLowerCase(Locale.ROOT);
-       // c = c.replace('C', 'Ш');
+        String c = "Спасибо большое! " + administrator.getName() + ". Все было супер!";
+        c = c.replaceAll("[Сс]", "ш");
         System.out.println(c);
-        }
+    }
 }

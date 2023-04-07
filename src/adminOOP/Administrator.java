@@ -1,5 +1,8 @@
 package adminOOP;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Administrator extends Client {
     protected String surname;
     protected String name;
@@ -30,7 +33,7 @@ public class Administrator extends Client {
     }
 
     Administrator() {
-
+        scandal = getScandal() + getScandal();
     }
 
     public int getExperience() {
@@ -81,4 +84,34 @@ public class Administrator extends Client {
         this.surname = surname;
     }
 
+    public static void welcome (Client client) {
+        if (Objects.equals(client.getGender(), "Male")) {
+            System.out.println("Добрый день господин " + client.getName() + " " + client.getSurname() + "!");
+        } else {
+            System.out.println("Добрый день госпожа " + client.getName() + " " + client.getSurname() + "!");
+        }
+    }
+
+    public static void regiserClient (Client client, Administrator administrator) {
+        if (client.getSurname().endsWith("ян")){
+            System.out.println("Барев Дзез!");
+        }
+        System.out.println(administrator.getName() + " записывает:" + "\n" + "*Фамилия: " + client.getSurname() +
+                "\n" + "*Имя: " + client.getName() + "\n" + "*Возраст: " + client.getAge() +
+                "\n" + "*Номер телефона: " + client.getPhoneNumber() + "\n" + "*Email: " + client.getEmail());
+    }
+
+    public static void screaming () {
+        String a = "Рады приветствовать в нашем уютном гнезде!";
+        char[] b = a.toCharArray();
+        for (char c : b) {
+            System.out.print(c + "-");
+        }
+        System.out.println("\n");
+    }
+
+    public static void resultOfDay (Administrator a) {
+        System.out.println(a.getName() + " " + a.getSurname() + "(Стаж - " + a.getExperience() + " лет)" +
+                "\n" + "Поскандалил - " + a.getScandal() + " раз" + "\n" + "Получил чаевых в сумме: " + a.getGratuity());
+    }
 }
