@@ -5,11 +5,13 @@ public class DayAdminLife {
         Administrator admin1 = new Administrator("Петров", "Валерий", 8);
         admin1.setGratuity(50);
         Administrator admin2 = new Administrator();
+        admin2.setScandal(4);
+        admin1.setScandal(5);
         Administrator admin3 = new Administrator("Глеб", 7, 100, 3);
         Client client1 = new Client("Анна", "Дьякова", 24);
         Client client2 = new Client();
         Client client3 = new Client("Игорь", "+792045645645", "Male");
-        System.out.println(Administrator.allScandal);
+        System.out.println("Общее количество скандалов за день: " + Administrator.allScandal);
         client1.setEmail("bebra@mail.ru");
         client1.setGender("Female");
         client1.setSurname("Демьян");

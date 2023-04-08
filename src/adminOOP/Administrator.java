@@ -26,7 +26,7 @@ public class Administrator extends Client {
         } else {
             System.out.println("Мало опыта");
         }
-        allScandal = scandal + scandal;
+        allScandal = Administrator.allScandal + scandal;
     }
 
     Administrator(String surname, String name, int experience, int gratuity, int scandal) {
@@ -35,10 +35,11 @@ public class Administrator extends Client {
         this.experience = experience;
         this.gratuity = gratuity;
         this.scandal = scandal;
-        allScandal = scandal + scandal;
+        allScandal = Administrator.allScandal + scandal;
     }
 
     Administrator() {
+
     }
 
     public int getAllScandal(){
@@ -76,6 +77,7 @@ public class Administrator extends Client {
     public void setScandal(int scandal) {
         if (scandal < 10) {
             this.scandal = scandal;
+            allScandal = Administrator.allScandal + scandal;
         } else {
             System.out.println("Уволен");
         }
