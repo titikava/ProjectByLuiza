@@ -1,21 +1,26 @@
 package adminOOP;
 
-import java.util.Arrays;
 import java.util.Locale;
-import java.util.Objects;
 
 public class Client {
-    protected String name;
-    protected String surname;
-    protected int age;
-    protected String gender;
-    protected String email;
-    protected String phoneNumber;
+    private String name;
+    private String surname;
+    private int age;
+    private String gender;
+    private String email;
+    private String phoneNumber;
 
     Client(String name, String surname, int age) {
-        this.name = name;
+        switch (name) {
+            case "Валерий", "Игорь", "Александра", "Светлана", "Анна", "Джузеппе" -> this.name = name;
+            default -> System.out.println("Простите, но ваше имя не подходит нам :(");
+        }
         this.surname = surname;
-        this.age = age;
+        if (age > 17 && age < 76) {
+            this.age = age;
+        } else {
+            System.out.println("Ваш возраст не подходит, сорян");
+        }
     }
 
     Client(String surname, String email) {
@@ -24,9 +29,16 @@ public class Client {
     }
 
     Client(String name, String phoneNumber, String gender) {
-        this.name = name;
+        switch (name) {
+            case "Валерий", "Игорь", "Александра", "Светлана", "Анна", "Джузеппе" -> this.name = name;
+            default -> System.out.println("Простите, но ваше имя не подходит нам :(");
+        }
         this.phoneNumber = phoneNumber;
-        this.gender = gender;
+        if (gender.toLowerCase(Locale.ROOT).equals("female") || gender.toLowerCase(Locale.ROOT).equals("male")) {
+            this.gender = gender;
+        } else {
+            System.out.println("Не существующий гендер");
+        }
     }
 
     Client() {
@@ -64,9 +76,9 @@ public class Client {
         }
     }
 
-    public void setAge(int a) {
-        if (a > 17 && a < 76) {
-            this.age = a;
+    public void setAge(int age) {
+        if (age > 17 && age < 76) {
+            this.age = age;
         } else {
             System.out.println("Ваш возраст не подходит, сорян");
         }
@@ -81,7 +93,7 @@ public class Client {
     }
 
     public void setGender(String gender) {
-        if (Objects.equals(gender, "Female") || Objects.equals(gender, "Male")) {
+        if (gender.toLowerCase(Locale.ROOT).equals("female") || gender.toLowerCase(Locale.ROOT).equals("male")) {
             this.gender = gender;
         } else {
             System.out.println("Не существующий гендер");
@@ -92,23 +104,26 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    public static void sayMyName(String name, String surname) {
+    public void sayMyName(Client client) {
         name = name.concat(" " + surname);
         System.out.println(name);
     }
 
-    public static void yellAtTheAdmin(String name, String surname, String email) {
+    public void yellAtTheAdmin(Client client, Administrator admin) {
         String c = "Я - " + name.concat(" " + surname) + "! Как вы могли неправильно записать мои данные?! Мой " +
                 "имейл: " + email;
+        admin.setScandal(admin.getScandal()+1);
+        Administrator.allScandal++;
         System.out.println(c.toUpperCase(Locale.ROOT));
     }
 
-    public static void getSomethingMoney(String name, Administrator administrator) {
-        System.out.println(name + " дал чаевые " + administrator.getName() + " в размере - " + administrator.getGratuity()
+    public void getSomethingMoney(String name, Administrator administrator, int cash) {
+        administrator.setGratuity(cash);
+        System.out.println(name + " дал чаевые " + administrator.getName() + " в размере - " + cash
                 + " долларов");
     }
 
-    public static void thanksAdmin(Administrator administrator) {
+    public void thanksAdmin(Administrator administrator) {
         String c = "Спасибо большое! " + administrator.getName() + ". Все было супер!";
         c = c.replaceAll("[Сс]", "ш");
         System.out.println(c);
