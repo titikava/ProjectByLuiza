@@ -9,6 +9,6 @@ public class Flower {
     Flower(){
         sumFlower++;
     }
-//Не могу понять почему не работает подсчет такой
+
 
 }

@@ -8,7 +8,6 @@ public class MyClass {
         System.out.println("Всего продано - " + Flower.sumFlower + " цветка");
         System.out.println("Из которых роз - " + Rose.quantity + ", тюльпанов - " + Tulip.quantity + ", гвоздик - " +
                 Carnation.quantity + ", ромашек - " + Chamomile.quantity);
-
     }
 
      public static void bouquet1() {
@@ -49,13 +48,4 @@ public class MyClass {
         System.out.println("Ваш букет стоит: " + (tulip1.price + rose1.price
                 + carnation1.price + carnation2.price + carnation3.price + chamomile1.price) + " рублей.");
     }
-
-  /*  public static double bouquet1(Flower[] flowers) {
-        int priceSum = 0;
-        for (Flower flower: flowers){
-            priceSum += flower.price;
-        }
-        return priceSum;
-    }*/
-
 }
