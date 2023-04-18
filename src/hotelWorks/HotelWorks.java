@@ -5,7 +5,7 @@ import java.util.Objects;
 public abstract class HotelWorks {
     private String name;
     private String surname;
-    private int salary;
+    protected int salary;
     private int experience;
 
     public String getName() {
@@ -13,8 +13,8 @@ public abstract class HotelWorks {
     }
 
     public void setName(String name) {
-       if (name != null) this.name = name;
-       else System.out.println("Пустота не есть имя");
+       if (name.equals("Вельзевул")) System.out.println("Пошел в жопу Вельзевул");
+       else this.name = name;
     }
 
     public String getSurname() {
@@ -22,8 +22,8 @@ public abstract class HotelWorks {
     }
 
     public void setSurname(String surname) {
-        if (surname != null) this.surname = surname;
-        else System.out.println("Пустота не есть фамилия");
+        if (surname.equals("Вельзевулович")) System.out.println("Пошел в жопу Вельзевул");
+        else this.surname = surname;
     }
 
     public int getSalary() {
@@ -32,6 +32,8 @@ public abstract class HotelWorks {
 
     public void setSalary(int salary) {
         this.salary = salary;
+       /*if (salary > 0) this.salary = salary;
+       else System.out.println("За бесплатно");*/
     }
 
     public int getExperience() {
@@ -39,7 +41,17 @@ public abstract class HotelWorks {
     }
 
     public void setExperience(int experience) {
-        this.experience = experience;
+        switch (experience) {
+            case 0:
+                this.experience = experience;
+                System.out.println("Не так уж и много");
+            case 1, 2, 3, 4:
+                this.experience = experience;
+                System.out.println("Не так уж и много, но пойдет");
+            default:
+                this.experience = experience;
+                System.out.println("Такие люди нам пригодятся");
+        }
     }
 
     abstract void introduceYourself();

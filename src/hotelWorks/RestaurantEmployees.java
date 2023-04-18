@@ -9,7 +9,6 @@ public class RestaurantEmployees extends HotelWorks{
         return position;
     }
 
-
     public void positionString() {
         System.out.println(Arrays.toString(getPosition()));
     }
