@@ -31,7 +31,7 @@ public class Admin extends HotelWorks {
     }
 
     @Override
-    void introduceYourself() {
+   protected void introduceYourself() {
         System.out.println("Привет! Меня зовут - " + getName());
         praiseTheHotel();
     }

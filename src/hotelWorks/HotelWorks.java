@@ -1,7 +1,5 @@
 package hotelWorks;
 
-import java.util.Objects;
-
 public abstract class HotelWorks {
     private String name;
     private String surname;
@@ -54,9 +52,9 @@ public abstract class HotelWorks {
         }
     }
 
-    abstract void introduceYourself();
+    protected abstract void introduceYourself();
 
-    void praiseTheHotel() {
+    protected void praiseTheHotel() {
         System.out.println("Отель прекрасен, спору нет");
     }
 

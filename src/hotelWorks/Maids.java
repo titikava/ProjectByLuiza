@@ -14,7 +14,7 @@ public class Maids extends HotelWorks {
         this.salary = 35000;
     }
 
-    Maids(){
+    Maids() {
         this.salary = 35000;
     }
 
@@ -31,22 +31,23 @@ public class Maids extends HotelWorks {
         else System.out.println("Ни больше, ни меньше");
     }
 
-    public void setListOfRooms(int[] listOfRooms){
+    public void setListOfRooms(int[] listOfRooms) {
         this.listOfRooms = listOfRooms;
     }
 
     @Override
-    void introduceYourself() {
+    protected void introduceYourself() {
         System.out.println("Привет! Меня зовут - " + getName());
     }
 
     public void setAge(int age) {
-            if (age < 57) this.age = age;
+        if (age < 57) this.age = age;
         else System.out.println("Вы старушка, милочка");
     }
 
-    public void maidsDetails() {
-        System.out.println("Комнаты уборки - " + Arrays.toString(getListOfRooms()) + "\n"
-                + "Возраст сотрудника - " + getAge() + "\n" + "Имя сотрудника - " + getName());
+    @Override
+    public String toString() {
+        return "Комнаты уборки - " + Arrays.toString(getListOfRooms()) + "\n"
+                + "Возраст сотрудника - " + getAge() + "\n" + "Имя сотрудника - " + getName();
     }
 }

@@ -2,7 +2,7 @@ package hotelWorks;
 
 import java.util.Arrays;
 
-public class RestaurantEmployees extends HotelWorks{
+public class RestaurantEmployees extends HotelWorks {
     private final String[] position = {"Шеф", "Су-шеф", "Официант", "Посудомойщица"};
 
     public String[] getPosition() {
@@ -14,7 +14,7 @@ public class RestaurantEmployees extends HotelWorks{
     }
 
     @Override
-    void introduceYourself() {
+    protected void introduceYourself() {
         System.out.println("Я обычный работяга, че надо?");
     }
 }
