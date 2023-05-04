@@ -1,16 +1,34 @@
 package hotelWorks;
 
+import uroki.Rank070423;
+
 import java.util.Arrays;
 
 public class RestaurantEmployees extends HotelWorks {
-    private final String[] position = {"Шеф", "Су-шеф", "Официант", "Посудомойщица"};
+    public enum Position
+    {
+        CHEF, SUCHEF, WAITER, DISHWASHER;
 
-    public String[] getPosition() {
+
+    }
+
+    Position position;
+
+    public Position getPosition() {
         return position;
     }
 
-    public void positionString() {
-        System.out.println(Arrays.toString(getPosition()));
+    public void setSalary(int salary){
+        this.salary = salary;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "А у нас вот такие должности имеются - " + Arrays.toString(RestaurantEmployees.Position.values());
     }
 
     @Override

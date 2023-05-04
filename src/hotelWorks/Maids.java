@@ -3,7 +3,7 @@ package hotelWorks;
 import java.util.Arrays;
 
 public class Maids extends HotelWorks {
-    private int age;
+    protected int age;
     protected int[] listOfRooms;
 
     Maids(String name, int age, int[] listOfRooms) {
@@ -31,19 +31,20 @@ public class Maids extends HotelWorks {
         else System.out.println("Ни больше, ни меньше");
     }
 
+    public void setAge(int age) {
+        if (age < 57) this.age = age;
+        else System.out.println("Вы старушка, милочка");
+    }
+
     public void setListOfRooms(int[] listOfRooms) {
         this.listOfRooms = listOfRooms;
     }
 
     @Override
     protected void introduceYourself() {
-        System.out.println("Привет! Меня зовут - " + getName());
+        System.out.println("Привет! Меня зовут - " + name);
     }
 
-    public void setAge(int age) {
-        if (age < 57) this.age = age;
-        else System.out.println("Вы старушка, милочка");
-    }
 
     @Override
     public String toString() {

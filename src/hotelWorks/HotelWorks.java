@@ -1,10 +1,10 @@
 package hotelWorks;
 
 public abstract class HotelWorks {
-    private String name;
-    private String surname;
+    protected String name;
+    protected String surname;
     protected int salary;
-    private int experience;
+    protected int experience;
 
     public String getName() {
         return name;
@@ -51,6 +51,7 @@ public abstract class HotelWorks {
                 System.out.println("Такие люди нам пригодятся");
         }
     }
+
 
     protected abstract void introduceYourself();
 
