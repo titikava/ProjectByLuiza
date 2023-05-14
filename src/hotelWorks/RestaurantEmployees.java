@@ -7,9 +7,7 @@ import java.util.Arrays;
 public class RestaurantEmployees extends HotelWorks {
     public enum Position
     {
-        CHEF, SUCHEF, WAITER, DISHWASHER;
-
-
+        CHEF, SUCHEF, WAITER, DISHWASHER
     }
 
     Position position;
@@ -34,5 +32,9 @@ public class RestaurantEmployees extends HotelWorks {
     @Override
     protected void introduceYourself() {
         System.out.println("Я обычный работяга, че надо?");
+    }
+
+    public void cooking(String mail) {
+        System.out.println("Кухня готовит блюдо - " + mail);
     }
 }

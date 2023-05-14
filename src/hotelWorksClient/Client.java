@@ -1,13 +1,17 @@
-package hotelWorks;
+package hotelWorksClient;
+
+import hotelWorks.*;
 
 import java.util.Locale;
+import java.util.SortedMap;
 
-public class Client extends HotelWorks{
+public class Client extends HotelWorks {
 
     protected int age;
     protected String gender;
     protected String email;
     protected String phoneNumber;
+    private hotelWorks.RestaurantEmployees RestaurantEmployees;
 
     Client(String name, String surname, int age) {
         switch (name) {
@@ -117,20 +121,30 @@ public class Client extends HotelWorks{
     public void yellAtTheAdmin(Client client, Administrator admin) {
         String c = "Я - " + name.concat(" " + surname) + "! Как вы могли неправильно записать мои данные?! Мой " +
                 "имейл: " + email;
-        admin.setScandal(admin.scandal+1);
+        admin.setScandal(admin.getScandal() + 1);
         Administrator.allScandal++;
         System.out.println(c.toUpperCase(Locale.ROOT));
     }
 
     public void getSomethingMoney(String name, Administrator administrator, int cash) {
         administrator.setGratuity(cash);
-        System.out.println(name + " дал чаевые " + administrator.name + " в размере - " + cash
+        System.out.println(name + " дал чаевые " + administrator.getName() + " в размере - " + cash
                 + " долларов");
     }
 
     public void thanksAdmin(Administrator administrator) {
-        String c = "Спасибо большое! " + administrator.name + ". Все было супер!";
+        String c = "Спасибо большое! " + administrator.getName() + ". Все было супер!";
         c = c.replaceAll("[Сс]", "ш");
         System.out.println(c);
+    }
+
+    public void thanksAdmin() {
+        System.out.println("Спасибо большое");
+    }
+
+    public void orderMailOfAdmin(Administrator administrator, String mail) {
+        System.out.println("Дорогуша, закажи-ка мне " + mail);
+        System.out.println(name + " заказал " + mail + " у администратора " + administrator.getName());
+        administrator.orderMail(RestaurantEmployees, mail);
     }
 }

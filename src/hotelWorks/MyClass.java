@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MyClass {
 
     public static void main(String[] args) {
-        Administrator admin1 = new Administrator("Геворг", "Геворгий", 5);
+//        Administrator admin1 = new Administrator("Геворг", "Геворгий", 5);
 //        Maids maids1 = new Maids("Алиса", 22, new int[]{5, 6, 7});
 //        maids1.maidsDetails();
 //        admin1.setSalary(3100);
@@ -21,7 +21,7 @@ public class MyClass {
         RestaurantEmployees employees1 = new RestaurantEmployees();
         employees1.setPosition(RestaurantEmployees.Position.CHEF);
         System.out.println(employees1.getPosition());
-        admin1.setRestaurantEmployeesSalary(employees1);
+//        admin1.setRestaurantEmployeesSalary(employees1);
         System.out.println(employees1.getSalary());
     }
 }
