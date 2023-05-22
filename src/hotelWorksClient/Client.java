@@ -3,6 +3,7 @@ package hotelWorksClient;
 import hotelWorks.Administrator;
 import hotelWorks.HotelWorks;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Client extends HotelWorks {
@@ -14,7 +15,7 @@ public class Client extends HotelWorks {
 
     public Client(String name, String surname, int age) {
         switch (name) {
-            case "Валерий", "Игорь", "Александра", "Светлана", "Анна", "Джузеппе" -> this.name = name;
+            case "Анна", "Антон", "Алексей", "Алёна", "Иван", "Илья", "Федор", "Юля" -> this.name = name;
             default -> System.out.println("Простите, но ваше имя не подходит нам :(");
         }
         this.surname = surname;
@@ -28,6 +29,10 @@ public class Client extends HotelWorks {
     public Client(String surname, String email) {
         this.surname = surname;
         this.email = email;
+    }
+
+    public Client(String name) {
+        this.name = name;
     }
 
     public Client(String name, String phoneNumber, String gender) {
@@ -146,4 +151,9 @@ public class Client extends HotelWorks {
         System.out.println(name + " заказал " + mail + " у администратора " + administrator.getName());
         administrator.orderMail(mail);
     }
-}
+        @Override
+        public String toString () {
+            return "Имя - " + name + "; Фамилия - " + surname + "; Возраст - " + age + "\n";
+        }
+    }
+
