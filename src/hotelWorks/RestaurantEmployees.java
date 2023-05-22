@@ -12,6 +12,16 @@ public class RestaurantEmployees extends HotelWorks {
 
     Position position;
 
+    RestaurantEmployees(String name, String surname, int experience) {
+        this.name = name;
+        this.surname = surname;
+        this.experience = experience;
+    }
+
+    RestaurantEmployees(){
+        this.name = "Чувак";
+    }
+
     public Position getPosition() {
         return position;
     }
@@ -26,7 +36,9 @@ public class RestaurantEmployees extends HotelWorks {
 
     @Override
     public String toString() {
-        return "А у нас вот такие должности имеются - " + Arrays.toString(RestaurantEmployees.Position.values());
+//        return "А у нас вот такие должности имеются - " + Arrays.toString(RestaurantEmployees.Position.values());
+        return "Имя сотрудника - " + name + "\n" + "Фамилия сотрудника - " + surname + "\n"
+                + "Опыт сотрудника - " + experience;
     }
 
     @Override

@@ -1,33 +1,42 @@
 package hotelWorks;
 
-import java.util.Arrays;
+import hotelWorksClient.Client;
 
 public class MyClass {
 
     public static void main(String[] args) {
-//        Administrator admin1 = new Administrator("Геворг", "Геворгий", 5);
-//        Maids maids1 = new Maids("Алиса", 22, new int[]{5, 6, 7});
-//        maids1.maidsDetails();
-//        admin1.setSalary(3100);
-//        System.out.println(admin1.getSalary());
-//        System.out.println(maids1.getSalary());
-//        admin1.rooms = maids1.getListOfRooms();
-//        int[] rooms1 = {22, 65, 34};
-//        admin1.setRooms(rooms1);
-//        maids1.setListOfRooms(admin1.rooms);
-//        System.out.println(Arrays.toString(maids1.getListOfRooms()));
-//        Maids maids2 = new Maids("Варвара", 59, new int[]{8, 9, 10});
-//        maids2.setName("Вельзевул");
-        RestaurantEmployees employees1 = new RestaurantEmployees();
-        employees1.setPosition(RestaurantEmployees.Position.CHEF);
-        System.out.println(employees1.getPosition());
-//        admin1.setRestaurantEmployeesSalary(employees1);
-        System.out.println(employees1.getSalary());
+        Maids maids1 = new Maids("Юлия", 29, new int[]{1, 5, 6});
+        Maids maids2 = new Maids("Виктория", 20, new int[]{2, 3, 4});
+        Administrator administrator1 = new Administrator("Грегор", "Грегорович", 8, maids1, maids2);
+        Maids maids3 = new Maids("Наталья", 29, new int[]{7, 8, 9});
+        Maids maids4 = new Maids("Анна", 20, new int[]{150, 151, 152});
+        Administrator administrator2 = new Administrator("Шмегор", "Шмегорович", 7, maids3, maids4);
+
+        administrator1.assignRoomsToMaids(new int[]{100, 101, 102}, new int[]{103, 104, 15});
+        System.out.println(maids1.toString());
+        System.out.println(maids2);
+        maids3.introduceYourself();
+
+        RestaurantEmployees chef = new RestaurantEmployees();
+        chef.setPosition(RestaurantEmployees.Position.CHEF);
+        chef.setSalary(70000);
+        RestaurantEmployees suchef = new RestaurantEmployees();
+        suchef.setPosition(RestaurantEmployees.Position.SUCHEF);
+        RestaurantEmployees waiter1 = new RestaurantEmployees();
+        waiter1.setPosition(RestaurantEmployees.Position.WAITER);
+        RestaurantEmployees waiter2 = new RestaurantEmployees();
+        waiter2.setPosition(RestaurantEmployees.Position.WAITER);
+        RestaurantEmployees dishwasher = new RestaurantEmployees();
+        dishwasher.setPosition(RestaurantEmployees.Position.DISHWASHER);
+        administrator1.setRestaurantEmployeesSalary(chef);
+        System.out.println(chef.getSalary());
+
+        Client client1 = new Client("Валерий", "Валерьевич", 20);
+        client1.orderMailOfAdmin(administrator1, "Бургер");
+
+
     }
 }
 
-
-//изменить переменные на protected - done
-//в классах наследниках изменить getName на name и тому подобные штуки - done
-//в MyClass использовать геттеры сеттеры - ponyatno
-//написать с использованием enum
+//в работниках ресторана переопределить toString используя атрибуты родительского класса + прописать конструктор с параметрами,
+//что бы можно было вывести их данные на экран

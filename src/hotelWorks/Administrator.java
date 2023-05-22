@@ -18,21 +18,21 @@ public class Administrator extends HotelWorks {
         this.setExperience(experience);
         this.setSurname(surname);
         this.salary = 250000;
-        this.maids1 = new Maids();
-        this.maids2 = new Maids();
+        this.maids1 = maids1;
+        this.maids2 = maids2;
     }
 
     Administrator(String name, int experience, Maids maids1, Maids maids2) {
         this.setName(name);
         this.setExperience(experience);
         this.salary = 250000;
-        this.maids1 = new Maids();
-        this.maids2 = new Maids();
+        this.maids1 = maids1;
+        this.maids2 = maids2;
     }
 
     Administrator(Maids maids1, Maids maids2) {
-        this.maids1 = new Maids();
-        this.maids2 = new Maids();
+        this.maids1 = maids1;
+        this.maids2 = maids2;
         this.salary = 250000;
     }
 
@@ -135,7 +135,7 @@ public class Administrator extends HotelWorks {
                 "\n" + "Поскандалил - " + a.scandal + " раз" + "\n" + "Получил чаевых в сумме: " + a.gratuity);
     }
 
-    public void assignRoomsToMaids(Administrator administrator, int[] mass1, int[] mass2) {
+    public void assignRoomsToMaids(int[] mass1, int[] mass2) {
         maids1.setListOfRooms(mass1);
         maids2.setListOfRooms(mass2);
     }
@@ -143,20 +143,24 @@ public class Administrator extends HotelWorks {
     public void setRestaurantEmployeesSalary(RestaurantEmployees restaurantEmployees) {
         if (CHEF.equals(restaurantEmployees.position)) {
             restaurantEmployees.setSalary(150000);
+            return;
         } else if (SUCHEF.equals(restaurantEmployees.position)) {
             restaurantEmployees.setSalary(120000);
+            return;
         } else if (WAITER.equals(restaurantEmployees.position)) {
             restaurantEmployees.setSalary(75000);
+            return;
         } else if (DISHWASHER.equals(restaurantEmployees.position)) {
             restaurantEmployees.setSalary(45000);
-        } else {
-            throw new IllegalArgumentException("Invalid restaurant employees position");
+            return;
         }
+        throw new IllegalArgumentException("Invalid restaurant employees position");
     }
 
-    public void orderMail(RestaurantEmployees employees, String mail) {
-        System.out.println("Привет голубчик " + employees.name + "! Это " + name + ". Приготовь пожалуйста " + mail);
+    public void orderMail(String mail) {
+        RestaurantEmployees restaurantEmployees1 = new RestaurantEmployees();
+        System.out.println("Привет голубчик " + restaurantEmployees1.name + "! Это " + name + ". Приготовь пожалуйста " + mail);
         System.out.println(name + " заказал блюдо - " + mail + " на кухне");
-        employees.cooking(mail);
+        restaurantEmployees1.cooking(mail);
     }
 }

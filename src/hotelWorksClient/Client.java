@@ -1,9 +1,9 @@
 package hotelWorksClient;
 
-import hotelWorks.*;
+import hotelWorks.Administrator;
+import hotelWorks.HotelWorks;
 
 import java.util.Locale;
-import java.util.SortedMap;
 
 public class Client extends HotelWorks {
 
@@ -11,9 +11,8 @@ public class Client extends HotelWorks {
     protected String gender;
     protected String email;
     protected String phoneNumber;
-    private hotelWorks.RestaurantEmployees RestaurantEmployees;
 
-    Client(String name, String surname, int age) {
+    public Client(String name, String surname, int age) {
         switch (name) {
             case "Валерий", "Игорь", "Александра", "Светлана", "Анна", "Джузеппе" -> this.name = name;
             default -> System.out.println("Простите, но ваше имя не подходит нам :(");
@@ -26,12 +25,12 @@ public class Client extends HotelWorks {
         }
     }
 
-    Client(String surname, String email) {
+    public Client(String surname, String email) {
         this.surname = surname;
         this.email = email;
     }
 
-    Client(String name, String phoneNumber, String gender) {
+    public Client(String name, String phoneNumber, String gender) {
         switch (name) {
             case "Валерий", "Игорь", "Александра", "Светлана", "Анна", "Джузеппе" -> this.name = name;
             default -> System.out.println("Простите, но ваше имя не подходит нам :(");
@@ -44,7 +43,7 @@ public class Client extends HotelWorks {
         }
     }
 
-    Client() {
+    public Client() {
 
     }
 
@@ -145,6 +144,6 @@ public class Client extends HotelWorks {
     public void orderMailOfAdmin(Administrator administrator, String mail) {
         System.out.println("Дорогуша, закажи-ка мне " + mail);
         System.out.println(name + " заказал " + mail + " у администратора " + administrator.getName());
-        administrator.orderMail(RestaurantEmployees, mail);
+        administrator.orderMail(mail);
     }
 }
