@@ -5,6 +5,7 @@ import hotelWorks.HotelWorks;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Client extends HotelWorks {
 
@@ -151,9 +152,25 @@ public class Client extends HotelWorks {
         System.out.println(name + " заказал " + mail + " у администратора " + administrator.getName());
         administrator.orderMail(mail);
     }
-        @Override
-        public String toString () {
-            return "Имя - " + name + "; Фамилия - " + surname + "; Возраст - " + age + "\n";
-        }
+
+    @Override
+    public String toString() {
+        return "Имя - " + name + "; Фамилия - " + surname + "; Возраст - " + age + "\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+        Client client = (Client) o;
+        return age == client.age &&
+                Objects.equals(name, client.name) &&
+                Objects.equals(surname, client.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, age);
+    }
+}
 

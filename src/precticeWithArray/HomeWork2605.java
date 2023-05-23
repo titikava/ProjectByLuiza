@@ -111,14 +111,13 @@ public class HomeWork2605 {
         clients1.add(new Client("Алексей", "Пятница", 66));
         clients1.add(new Client("Алёна", "Дэнс", 18));
 //        Вывести на экран индекс клиента Алексея.
-        System.out.println(clients1.lastIndexOf(new Client("Алексей", "Пятница", 66)));
-        System.out.println(clients1.get(2));
+        System.out.println("Индекс клиента Алексея: " + clients1.indexOf(new Client("Алексей", "Пятница", 66)));
 //        Вывести на экран элемент, находящийся на позиции 2.
-        System.out.println(clients1.get(2));
+        System.out.println("Клиент на позиции 2: " + clients1.get(2));
 //        Добавить ещё одного клиента «Федор»
         clients1.add(new Client("Федор", "Мучачо", 44));
 //        Проверить пустой ли список1. Вывести значение (true/false)
-        System.out.println(clients1.isEmpty());
+        System.out.println("Список клиентов пуст? -  " + clients1.isEmpty());
 //        Создать список2 из 2 клиентов (Иван, Илья)
         ArrayList<Client> clients2 = new ArrayList<>();
         clients2.add(new Client("Иван", "Оралби", 19));
@@ -126,18 +125,18 @@ public class HomeWork2605 {
 //        Добавить список2 к имеющемуся
         clients1.addAll(clients2);
 //        Вывести список1 на экран. В полном виде.
-        System.out.println(clients1);
+        System.out.println("Список 1 в полном виде: " + clients1);
 //        Вывести список1 на экран, только имена клиентов.
-        System.out.println(clients1.get(0).getName() + "; " + clients1.get(1).getName() + "; " + clients1.get(2).getName()
-                + "; " + clients1.get(3).getName() + "; " + clients1.get(4).getName() + "; " + clients1.get(5).getName()
-                + "; " + clients1.get(6).getName() + ";");
+        System.out.println("Имена клиентов: " + clients1.get(0).getName() + "; " + clients1.get(1).getName() +
+                "; " + clients1.get(2).getName() + "; " + clients1.get(3).getName() + "; " + clients1.get(4).getName() +
+                "; " + clients1.get(5).getName() + "; " + clients1.get(6).getName() + ";");
 //        Удалить список2 из списка1.
         clients1.removeAll(clients2);
 //        Вывести на экран список1
-        System.out.println(clients1);
+        System.out.println("Список 1 после удаления: " + clients1);
 //        Заменить элемент на позиции 1 на клиента (Юля). (set)
         clients1.set(0,new Client("Юля", "Пуля", 41));
 //        Вывести на экран
-        System.out.println(clients1.get(0));
+        System.out.println("Инфа о клиенте на позиции 1: " + clients1.get(0));
     }
 }
