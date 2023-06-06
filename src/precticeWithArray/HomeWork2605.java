@@ -37,13 +37,13 @@ public class HomeWork2605 {
         }
         System.out.println("\n");
 //        Удалить первые 4 элемента.
-//        for(int i = 0; i<4; i++){
-//            array.remove(i);
-//        }
-        array1.remove(0);
-        array1.remove(1);
-        array1.remove(2);
-        array1.remove(3);
+        for(int k = 0; k<4; k++){
+            array1.remove(0);
+        }
+//        array1.remove(0);
+//        array1.remove(1);
+//        array1.remove(2);
+//        array1.remove(3);
 //        Вывести размер списка
         System.out.println("Размер массива: " + array1.size());
 //        Отсортировать список по возрастанию элементов 2 способами: используя Collections.sort(list)(изучить), и использую цикл.

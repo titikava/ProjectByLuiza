@@ -2,6 +2,8 @@ package hotelWorks;
 
 import hotelWorksClient.Client;
 
+import java.util.Formatter;
+
 public class MyClass {
 
     public static void main(String[] args) {
@@ -31,10 +33,19 @@ public class MyClass {
         administrator1.setRestaurantEmployeesSalary(chef);
         System.out.println(chef.getSalary());
 
+
         Client client1 = new Client("Валерий", "Валерьевич", 20);
         client1.orderMailOfAdmin(administrator1, "Бургер");
 
+//        try {
+//            Formatter f = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Итоги дня.txt");
+//            f.format("%s", administrator1.resultOfDay(administrator1));
+//            f.close();
+//        } catch (Exception e) {
+//            System.out.println("Error " + e);
+//        }
 
+        administrator2.resultOfDayFile(administrator2);
     }
 }
 

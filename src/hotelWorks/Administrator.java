@@ -2,6 +2,8 @@ package hotelWorks;
 
 import hotelWorksClient.Client;
 
+import java.util.Formatter;
+
 import static hotelWorks.RestaurantEmployees.Position.*;
 
 public class Administrator extends HotelWorks {
@@ -130,9 +132,19 @@ public class Administrator extends HotelWorks {
         System.out.println("\n");
     }
 
-    public void resultOfDay(Administrator a) {
-        System.out.println(a.name + " " + a.surname + "(Стаж - " + a.experience + " лет)" +
-                "\n" + "Поскандалил - " + a.scandal + " раз" + "\n" + "Получил чаевых в сумме: " + a.gratuity);
+    public String resultOfDay(Administrator a) {
+       return a.name + " " + a.surname + "(Стаж - " + a.experience + " лет)" +
+                "\n" + "Поскандалил - " + a.scandal + " раз" + "\n" + "Получил чаевых в сумме: " + a.gratuity;
+    }
+
+    public void resultOfDayFile(Administrator a) {
+        try {
+            Formatter f = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Итоги дня.txt");
+            f.format("%s", a.resultOfDay(a));
+            f.close();
+        } catch (Exception e) {
+            System.out.println("Error " + e);
+        }
     }
 
     public void assignRoomsToMaids(int[] mass1, int[] mass2) {

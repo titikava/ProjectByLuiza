@@ -51,16 +51,16 @@ public class MyClass090523_2 {
 //            System.out.println(sc.next());
 //        }
 //        sc.close();
-//        try {
-//            Formatter f = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Для жавы.txt");
-//            f.format("%s %s %s", "1", "John", "Smit");
-//            f.close();
-//            Formatter f2 = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Для жав2ы.txt");
-//            f2.format("%s", "1skdmaslkmdals asdasd asd \r\n 32r fgfdgdf4 gdfg ef");
-//            f2.close();
-//        } catch (Exception e) {
-//            System.out.println("Error " + e);
-//        }
+        try {
+            Formatter f = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Для жавы.txt");
+            f.format("%s %s %s", "1", "John", "Smit");
+            f.close();
+            Formatter f2 = new Formatter("C:\\Users\\iaros\\OneDrive\\Рабочий стол\\Для жав2ы.txt");
+            f2.format("%s", "1skdmaslkmdals asdasd asd \r\n 32r fgfdgdf4 gdfg ef");
+            f2.close();
+        } catch (Exception e) {
+            System.out.println("Error " + e);
+        }
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите кол-во элементов массива");
         int n;
